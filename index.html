@@ -1357,28 +1357,7 @@ window.__data = {
   }
 
   function navTo(target) {
-    if (target === 'insights') {
-      showPage('home');
-      requestAnimationFrame(() => {
-        const home = document.getElementById('page-home');
-        const ins = home && Array.from(home.querySelectorAll('section')).find(s => {
-          const h = s.querySelector('h2');
-          return h && h.textContent.includes('Insights');
-        });
-        if (ins) ins.scrollIntoView({behavior: 'smooth', block: 'start'});
-        else window.scrollTo(0, 0);
-      });
-      return;
-    }
-    if (target === 'contact') {
-      showPage('home');
-      requestAnimationFrame(() => {
-        const footer = document.querySelector('footer.site, .foot-cta');
-        if (footer) footer.scrollIntoView({behavior: 'smooth', block: 'start'});
-        else window.scrollTo(0, document.body.scrollHeight);
-      });
-      return;
-    }
+ 
     if (PAGES.indexOf(target) !== -1) {
       showPage(target);
       window.scrollTo(0, 0);
