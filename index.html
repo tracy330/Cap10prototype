@@ -405,6 +405,14 @@ footer a:hover{color:var(--amber)}
 .contact-office-block a { color: rgb(217,119,87); text-decoration: none; }
 .contact-office-block a:hover { text-decoration: underline; }
 </style>
+
+<style data-page-hero-fix="1">
+#page-insights .page-hero h1, #page-contact .page-hero h1 { font-family: Fraunces, serif; color: var(--ink, #0e3b4e); font-weight: 400; font-size: clamp(40px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.01em; }
+#page-insights .page-hero .eyebrow, #page-contact .page-hero .eyebrow { color: var(--accent, #d97737); font-family: Inter, system-ui, sans-serif; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; }
+#page-insights, #page-contact { background: var(--bone, #f7f3ec); color: var(--ink, #0e3b4e); }
+#page-insights .page-section, #page-contact .page-section { background: var(--bone, #f7f3ec); }
+#page-insights p, #page-contact p { color: var(--ink, #0e3b4e); }
+</style>
 </head>
 <body>
 <div id="app">
@@ -432,7 +440,7 @@ footer a:hover{color:var(--amber)}
   <div class="container hero-grid" style="grid-template-columns: 1fr; max-width: 900px; margin: 0px auto;">
     <div>
       <div class="eyebrow">European mid-market private equity</div>
-      <h1 class="h1">Partners in <u>responsible change</u>.</h1>
+      <h1 class="h1">Partners in responsible change.</h1>
       <p class="lede">Led by financial entrepreneurs, we partner with talented individuals to transform high-potential businesses that others overlook. We bring large-cap sophistication, creativity and innovation to the European mid-market buyout space.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" data-route="portfolio">See our portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
@@ -450,6 +458,21 @@ footer a:hover{color:var(--amber)}
   </div></div></div>
 </section>
 
+<section class="block about-founder-block" style="padding:120px 0;background:var(--bone);position:relative">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:3fr 7fr;gap:72px;align-items:start;max-width:1200px;margin:0 auto">
+      <!-- LEFT: small "Our Firm" label only -->
+      <div style="color: var(--amber-2); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; gap: 10px;"><span style="width:22px;height:1px;background:var(--amber-2);display:inline-block"></span> About Cap10</div>
+      <!-- RIGHT: Original About copy, verbatim from live site -->
+      <div>
+        <div style="font-size:20px;line-height:1.65;color:var(--graphite);font-family:'Fraunces',serif;font-weight:400">
+          <p style="margin-bottom:28px">Cap10 was founded in 2021 by experienced financial entrepreneurs who bring large-cap sophistication, creativity and innovation to the European mid-market buyout space.</p>
+          <p style="margin-bottom:36px">Cap10 delivers asymmetric returns to the upside, by transforming underdeveloped mid-cap business gems into industry champions.</p>
+        </div>
+        <a href="#" onclick="cap10Nav('firm');window.scrollTo(0,0);return false;" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:var(--ink);color:var(--bone);border-radius:999px;font-size:14px;font-weight:600;text-decoration:none">Read more about our firm <span>→</span></a>
+      </div>
+    </div>
+  </div></section>
 <section class="block">
   <div class="container">
     <div class="sec-head">
@@ -522,21 +545,7 @@ footer a:hover{color:var(--amber)}
 
 
 
-<section class="block about-founder-block" style="padding:120px 0;background:var(--bone);position:relative">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:3fr 7fr;gap:72px;align-items:start;max-width:1200px;margin:0 auto">
-      <!-- LEFT: small "Our Firm" label only -->
-      <div style="color: var(--amber-2); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; gap: 10px;"><span style="width:22px;height:1px;background:var(--amber-2);display:inline-block"></span> About Cap10</div>
-      <!-- RIGHT: Original About copy, verbatim from live site -->
-      <div>
-        <div style="font-size:20px;line-height:1.65;color:var(--graphite);font-family:'Fraunces',serif;font-weight:400">
-          <p style="margin-bottom:28px">Cap10 was founded in 2021 by experienced financial entrepreneurs who bring large-cap sophistication, creativity and innovation to the European mid-market buyout space.</p>
-          <p style="margin-bottom:36px">Cap10 delivers asymmetric returns to the upside, by transforming underdeveloped mid-cap business gems into industry champions.</p>
-        </div>
-        <a href="#" onclick="cap10Nav('firm');window.scrollTo(0,0);return false;" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:var(--ink);color:var(--bone);border-radius:999px;font-size:14px;font-weight:600;text-decoration:none">Read more about our firm <span>→</span></a>
-      </div>
-    </div>
-  </div></section>
+
 
 <section class="block">
   <div class="container">
@@ -612,7 +621,7 @@ footer a:hover{color:var(--amber)}
       <!-- LEFT: Fabrice portrait — large, square, rounded edges -->
       <div style="position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px -30px rgba(14,59,78,.35);background:var(--bone-2)">
         <img src="https://cms.cap10partners.com/uploads/small_Fabrice_Nottin_1_e320adde32.png" alt="Fabrice Nottin, Founding Partner, Cap10" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;filter:saturate(.95)">
-        <div style="position:absolute;left:24px;bottom:20px;background:rgba(14,59,78,.92);backdrop-filter:blur(6px);padding:14px 18px;border-radius:12px;color:var(--bone)">
+        <div style="position:absolute;left:24px;bottom:0px;background:rgba(14,59,78,.92);backdrop-filter:blur(6px);padding:14px 18px;border-radius:12px;color:var(--bone)">
           <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;line-height:1.1">Fabrice Nottin</div>
           <div style="font-size:12px;color:var(--amber);margin-top:3px;letter-spacing:.06em;text-transform:uppercase">Founding Partner</div>
         </div>
@@ -630,7 +639,7 @@ footer a:hover{color:var(--amber)}
         </div>
         <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap">
           <a href="https://www.youtube.com/watch?v=L7wSue7MAjM" target="_blank" rel="noopener">▶ Life of a Dealmaker</a>
-          <a href="https://www.linkedin.com/in/fabricenottin/" target="_blank" style="padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none">↗ LinkedIn</a>
+          <a href="https://www.linkedin.com/company/cap10-partners-llp" target="_blank" style="padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none">↗ LinkedIn</a>
         </div>
       </div>
     </div>
@@ -836,7 +845,7 @@ footer a:hover{color:var(--amber)}
   <div class="container">
     <div class="sec-head">
       <h2>Fun. Collaborative. Entrepreneurial.</h2>
-      <p>It's how we work, and it's why people stay. Off-sites in the Alps, climbing in Chamonix, kayaking in Marseille, cycling Mont Ventoux — and the quieter rhythm of Friday investment committee in London.</p>
+      <p>It’s how we work, and why people stay. Off‑sites in Chamonix and skiing up Mont Blanc, kayaking in Marseille, cycling Mont Ventoux — balanced by the quieter rhythm of working sessions with a view.</p>
     </div>
     <div class="gallery" style="grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; gap: 12px;"><div class="tile wide tall" style="grid-area: span 2 / span 2; position: relative; overflow: hidden; border-radius: 14px; background: rgb(10, 43, 57); cursor: pointer;">
       <img src="https://cms.cap10partners.com/uploads/Chamonix_wall_climbing_2dd28451fa.jpeg" alt="Wall climbing · Chamonix off-site" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease">
@@ -1392,8 +1401,10 @@ window.__data = {
       if (!p) return;
       const body = scrim.querySelector('.body');
       if (!body) return;
-      const photo = p.photoUrl
-        ? '<img src="' + p.photoUrl + '" alt="' + p.name + '" />'
+      var __mImg = document.querySelector('#page-team .member[data-id="' + id + '"] img');
+      var __srcUrl = (p.photoUrl) || (__mImg && __mImg.getAttribute('src')) || '';
+      const photo = __srcUrl
+        ? '<img src="' + __srcUrl + '" alt="' + p.name + '" />'
         : '<div class="bio-photo-init">' + (p.initials || '') + '</div>';
       const pull = p.pull
         ? '<div class="bio-pull">“' + p.pull + '”' + (p.attrib ? '<div class="bio-attrib">' + p.attrib + '</div>' : '') + '</div>'
