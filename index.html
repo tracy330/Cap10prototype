@@ -346,6 +346,64 @@ footer a:hover{color:var(--amber)}
   .insight-modal p { font-size: 16px; line-height: 1.7; color: #1A1A1A; margin: 0 0 18px; }
   .insight-modal p:last-child { margin-bottom: 0; }
 
+.lede { font-size: 1.25rem; line-height: 1.5; max-width: 60ch; margin: 0 0 3rem; opacity: 0.85; }
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.insight-card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.insight-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+.insight-card .insight-kind { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(217,119,87); margin-bottom: 0.25rem; }
+.insight-card .insight-date { font-size: 0.85rem; opacity: 0.6; margin-bottom: 0.75rem; }
+.insight-card h3 { font-size: 1.15rem; margin: 0 0 0.5rem; line-height: 1.3; }
+.insight-card p { font-size: 0.95rem; line-height: 1.5; margin: 0; opacity: 0.85; }
+
+.contact-paths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0 4rem;
+}
+.contact-path {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 2.25rem;
+}
+.contact-path h2 { margin: 0.5rem 0 1rem; font-size: 1.5rem; }
+.contact-path p { line-height: 1.55; margin: 0 0 1.5rem; opacity: 0.85; }
+.contact-path .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgb(217,119,87);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+.contact-path .btn:hover { background: rgb(197,99,67); }
+
+.contact-office {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.contact-office-block .eyebrow { margin-bottom: 0.75rem; }
+.contact-office-block p { line-height: 1.6; margin: 0; }
+.contact-office-block a { color: rgb(217,119,87); text-decoration: none; }
+.contact-office-block a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -1081,6 +1139,145 @@ footer a:hover{color:var(--amber)}
     </div>
   </section>
 </div>
+<!-- INSIGHTS PAGE -->
+<div id="page-insights" class="page" style="display:none;">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">Insights</div>
+      <h1>News, perspectives and announcements.</h1>
+    </div>
+  </div>
+
+  <div class="page-section">
+    <div class="page-section-inner">
+      <p class="lede">See our latest news, interviews and videos. For media enquiries, please email <a href="mailto:corporate@cap10partners.com">corporate@cap10partners.com</a>.</p>
+
+      <div class="insights-grid">
+
+        <article class="insight-card">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">10 November 2025</div>
+          <h3>Sureserve Acquires Bonarius</h3>
+          <p>Sureserve has announced the acquisition of Bonarius, a Netherlands-based compliance and energy services business — its first international step under Cap10's ownership.</p>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">04 November 2024</div>
+          <h3>Sureserve Acquires LCX</h3>
+          <p>Cap10 portfolio company Sureserve has acquired Low Carbon Exchange Limited (LCX), marking its third strategic acquisition in 2024.</p>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-kind">Podcast</div>
+          <div class="insight-date">14 May 2024</div>
+          <h3>Life of a Dealmaker</h3>
+          <p>Cap10 Founding Partner Fabrice Nottin is featured in Mayer Brown's podcast 'Life of a Dealmaker', tracing his path from CVC, UBS, Lion Capital and Apollo to founding Cap10.</p>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-kind">Team News</div>
+          <div class="insight-date">08 May 2024</div>
+          <h3>Luca Bonanomi joins as Partner</h3>
+          <p>Cap10, the specialist pan-European private equity firm based in London, has appointed Luca Bonanomi as the firm's new Partner.</p>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">08 May 2024</div>
+          <h3>Compass Investment</h3>
+          <p>On 3 May 2024, Cap10 Partners reached an agreement to partner with Compass Community, one of the UK's leading providers of therapeutic fostering and specialist care.</p>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">11 April 2024</div>
+          <h3>Sureserve Acquires Duality Group</h3>
+          <p>Cap10 portfolio company Sureserve Group, the leading compliance and renewable energy services group, completes the acquisition of Duality Group.</p>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">22 November 2023</div>
+          <h3>Sureserve Acquires Swale Heating</h3>
+          <p>Sureserve Group has agreed to acquire 100% of Swale Heating Ltd, expanding its compliance and renewable energy services platform.</p>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">12 July 2023</div>
+          <h3>Cap10 Completes Sureserve Acquisition</h3>
+          <p>Cap10 has completed the acquisition of 100% of Sureserve Group PLC (LSE:SUR), taking the UK-leading compliance and renewable energy services group private.</p>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-kind">Firm News</div>
+          <div class="insight-date">09 December 2021</div>
+          <h3>First Close</h3>
+          <p>Cap10 has announced the first close for its inaugural fund with €300 million of committed capital.</p>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="page-contact" class="page" style="display:none;">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">Contact</div>
+      <h1>Let's start a conversation.</h1>
+    </div>
+  </div>
+
+  <div class="page-section">
+    <div class="page-section-inner">
+      <p class="lede">Whether you're a founder considering your next chapter or an institutional investor exploring a partnership with Cap10, we'd like to hear from you.</p>
+
+      <div class="contact-paths">
+
+        <div class="contact-path">
+          <div class="eyebrow">Founders &amp; CEOs</div>
+          <h2>I'm building a company.</h2>
+          <p>If you're looking for capital and an operating partner for the next phase of growth — whether through a founder succession, family transition, or carve-out — we'd be glad to talk.</p>
+          <a class="btn" href="mailto:corporate@cap10partners.com?subject=Founder%20enquiry">Start a conversation →</a>
+        </div>
+
+        <div class="contact-path">
+          <div class="eyebrow">Limited Partners</div>
+          <h2>I'm an institutional investor.</h2>
+          <p>To learn more about Cap10's strategy, current fund opportunities, or to speak with our investor relations team directly.</p>
+          <a class="btn" href="mailto:corporate@cap10partners.com?subject=LP%20enquiry">Contact investor relations →</a>
+        </div>
+
+      </div>
+
+      <div class="contact-office">
+        <div class="contact-office-block">
+          <div class="eyebrow">Office</div>
+          <p>
+            12 Charles II Street<br>
+            St. James's<br>
+            London SW1Y 4QU<br>
+            United Kingdom
+          </p>
+        </div>
+
+        <div class="contact-office-block">
+          <div class="eyebrow">Email</div>
+          <p><a href="mailto:corporate@cap10partners.com">corporate@cap10partners.com</a></p>
+        </div>
+
+        <div class="contact-office-block">
+          <div class="eyebrow">Investors login</div>
+          <p><a href="https://icx.efrontcloud.com/@9396/cap10_investors_login/login.aspx" target="_blank" rel="noopener">Access the investor portal →</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>      
 </main>
 <footer class="site">
   <div class="container">
@@ -1224,7 +1421,7 @@ window.__data = {
     window.cap10ShowBio = function(id) {
       const p = teamById[id];
       if (!p) return;
-      const body = scrim.querySelector('.bio-body');
+      const body = scrim.querySelector('.body');
       if (!body) return;
       const photo = p.photoUrl
         ? '<img src="' + p.photoUrl + '" alt="' + p.name + '" />'
