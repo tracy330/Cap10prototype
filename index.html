@@ -583,12 +583,7 @@ footer a:hover{color:var(--amber)}
     <div class="foot-grid">
       <h2>Interested in <em>partnering</em> with us?</h2>
       <div class="foot-ctas">
-        <a class="foot-card" data-route="contact">
-          <div class="kind">Founders &amp; CEOs</div>
-          <h4>I'm building a company.</h4>
-          <p>Looking for capital and an operating partner for your next chapter? Let's talk.</p>
-          <span class="go">Start a conversation →</span>
-        </a>
+        
         <a class="foot-card" data-route="contact">
           <div class="kind">Limited Partners</div>
           <h4>I'm an institutional investor.</h4>
@@ -1237,18 +1232,13 @@ footer a:hover{color:var(--amber)}
 
       <div class="contact-paths">
 
-        <div class="contact-path">
-          <div class="eyebrow">Founders &amp; CEOs</div>
-          <h2>I'm building a company.</h2>
-          <p>If you're looking for capital and an operating partner for the next phase of growth — whether through a founder succession, family transition, or carve-out — we'd be glad to talk.</p>
-          <a class="btn" href="mailto:corporate@cap10partners.com?subject=Founder%20enquiry">Start a conversation →</a>
-        </div>
+        
 
         <div class="contact-path">
-          <div class="eyebrow">Limited Partners</div>
+          
           <h2>I'm an institutional investor.</h2>
           <p>To learn more about Cap10's strategy, current fund opportunities, or to speak with our investor relations team directly.</p>
-          <a class="btn" href="mailto:corporate@cap10partners.com?subject=LP%20enquiry">Contact investor relations →</a>
+          <a class="btn" href="mailto:investorrelations@cap10partners.com?subject=LP%20enquiry">Contact investor relations →</a>
         </div>
 
       </div>
@@ -1351,7 +1341,7 @@ window.__data = {
       const el = document.getElementById(id);
       if (el) el.style.display = (id === ('page-' + name) ? 'block' : 'none');
     });
-    document.querySelectorAll('.topbar a[data-route]').forEach(a => {
+    document.querySelectorAll('a[data-route]').forEach(a => {
       a.classList.toggle('active', a.dataset.route === name);
     });
   }
@@ -1368,7 +1358,7 @@ window.__data = {
   }
   window.cap10Nav = navTo;
 
-  document.querySelectorAll('.topbar a[data-route]').forEach(a => {
+  document.querySelectorAll('a[data-route]').forEach(a => {
     a.style.cursor = 'pointer';
     a.addEventListener('click', e => { e.preventDefault(); navTo(a.dataset.route); });
   });
