@@ -44,6 +44,7 @@ The current navigation (Our firm · Our team · Portfolio · Investing Responsib
 ### Our firm
 - A short editorial introduction from the Founding Partner that frames the firm's purpose and origin story.
 - A clean separation between *what* Cap10 does and *how* Cap10 thinks — making the page easier to skim and easier to deep-read.
+- **Note:** The placeholder copy used on the Our Firm card in this prototype was extracted from a US investment firm's website for illustrative purposes only. It is not Cap10's own wording and must be replaced with original copy before launch.
 
 ### Team — the headline change
 On the current site, clicking a team member shows nothing more than the photo and a LinkedIn link. The prototype makes the team genuinely explorable:
