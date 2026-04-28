@@ -1,8 +1,10 @@
 # Cap10 Website Redesign — Prototype
 
+<img width="1764" height="805" alt="image" src="https://github.com/user-attachments/assets/6fa532a8-9554-4f53-89c8-9d486d1f8dc7" />
+
 A clickable, single-page prototype of a refreshed Cap10 Partners website.
 
-**Live preview:** https://tracy330.github.io/Cap10prototype/
+**Live preview:** https://tracy330.github.io/cap10-website-redesign/
 
 This prototype is intended for internal review by the partners. It is not the live Cap10 site and is not indexed by search engines. The current public site remains at https://www.cap10partners.com.
 
@@ -70,7 +72,7 @@ On the current site, clicking a team member shows nothing more than the photo an
 
 ## How to review
 
-1. Open https://tracy330.github.io/Cap10prototype/ on a desktop browser (it is also responsive on mobile).
+1. Open https://tracy330.github.io/cap10-website-redesign/ on a desktop browser (it is also responsive on mobile).
 2. Walk through each section in the top navigation: **Our firm · Team · Portfolio · Responsible investing · Insights · Contact**.
 3. On the Team page, **hover** a portrait to see the quote, and **click a name** to read the full bio.
 4. Notes, edits and corrections are welcome — please send them to Tracy directly, or open an issue on this repository.
