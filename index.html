@@ -1421,6 +1421,7 @@ window.__data = {
       <div class="attrib">— ${p.attrib || 'Favourite quote'}</div>`;
     
     modalBody.innerHTML = p.bio ? '<p>' + p.bio.replace(/\|\|/g, '</p><p>') + '</p>' : '';
+    scrim.classList.add('open');
   }
 
     document.querySelectorAll('a[data-action="bio"]').forEach(a => {
