@@ -1319,12 +1319,9 @@ footer a:hover{color:var(--amber)}
 </div>
 <div id="modal-scrim" class="modal-scrim"><div class="modal" id="modal-content">
     <button class="close" aria-label="Close" onclick="document.getElementById('modal-scrim').classList.remove('open')">×</button>
-    <div class="modal-head">
-      <div class="avatar"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Fabrice_Nottin_1_e320adde32.png" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px;"><div class="initials" style="display: none;">FN</div></div>
-      <div class="who"><h2>Fabrice Nottin</h2><div class="role">Founding Partner</div></div>
-    </div>
-    <div class="pull"><q>Follow 3 rules: do the right thing, do the best you can and always show people you care.</q><div class="attrib">— Favourite quote</div></div>
-    <div class="body"><p>Fabrice is a Founding Partner of Cap10, and specialises in ‘essential’ consumer needs, niche industrials and mission-critical business services.</p><p>Fabrice has 20 years of experience in the financial industry, the vast majority in the private equity industry. He was previously a Partner at Apollo in the European private equity team, which he joined in 2011 and left in 2020 to create Cap10. He led a number of Apollo’s most successful transactions during his tenure. Prior to Apollo, Fabrice had experience at Lion Capital, UBS and CVC.</p><p>Fabrice is a graduate of ESSEC Business School, France, and is fluent in French and English.</p></div>
+    <div class="modal-head"></div>
+    <div class="pull"></div>
+    <div class="body"></div>
   </div></div>
 <div id="insight-modal-backdrop" class="insight-modal-backdrop"><div class="insight-modal"><button class="imc" aria-label="Close">×</button><div class="ime">
       <div class="imk">Deal announcement</div>
@@ -1404,30 +1401,26 @@ window.__data = {
     var __mImg = document.querySelector('#page-team .member[data-id="' + id + '"] img');
     var __srcUrl = (p.photoUrl) || (__mImg && __mImg.getAttribute('src')) || '';
     
-    body.innerHTML = `
-      <div class="modal" id="modal-content">
-        <button class="close" onclick="document.getElementById('modal-scrim').classList.remove('open')">�</button>
-        <div class="modal-head">
-          <div class="avatar">
-            ${__srcUrl ? `<img src="${__srcUrl}">` : `<div class="initials">${p.initials}</div>`}
-          </div>
-          <div class="who">
-            <div class="bio-name">${p.name}</div>
-            <div class="role-title">${p.role}</div>
-          </div>
-        </div>
-        <div class="pull">
-          <div class="quote">${p.pull || p.hover || ''}</div>
-          <div class="attrib"> ${p.attrib || ''}</div>
-        </div>
-        <div class="body">
-          <div class="bio-content">
-            ${p.bio ? '<p>' + p.bio.replace(/\|\|/g, '</p><p>') + '</p>' : ''}
-          </div>
-        </div>
+    // Populate the three modal sections separately (no outer wrapper)
+    const modalHead = scrim.querySelector('.modal-head');
+    const modalPull = scrim.querySelector('.pull');
+    const modalBody = scrim.querySelector('.body');
+    if (!modalHead || !modalPull || !modalBody) return;
+    
+    modalHead.innerHTML = `
+      <div class="avatar">
+        ${__srcUrl ? `<img src="${__srcUrl}">` : `<div class="initials">${p.initials}</div>`}
       </div>
-    `;
-    scrim.classList.add('open');
+      <div class="who">
+        <h2>${p.name}</h2>
+        <div class="role">${p.role}</div>
+      </div>`;
+    
+    modalPull.innerHTML = `
+      <q>${p.pull || p.hover || ''}</q>
+      <div class="attrib">— ${p.attrib || 'Favourite quote'}</div>`;
+    
+    modalBody.innerHTML = p.bio ? '<p>' + p.bio.replace(/\|\|/g, '</p><p>') + '</p>' : '';
   }
 
     document.querySelectorAll('a[data-action="bio"]').forEach(a => {
