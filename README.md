@@ -6,6 +6,8 @@ A clickable, single-page prototype of a refreshed Cap10 Partners website.
 
 **Live preview:** https://tracy330.github.io/cap10-website-redesign/
 
+*Last updated: 29 April 2026*
+
 This prototype is intended for internal review by the partners. It is not the live Cap10 site and is not indexed by search engines. The current public site remains at https://www.cap10partners.com.
 
 ---
@@ -62,7 +64,7 @@ On the current site, clicking a team member shows nothing more than the photo an
 - Concrete examples (e.g. Sureserve Foundation, decarbonising social housing) that show ESG in action across the portfolio.
 
 ### Insights & Contact
-- An **Insights** hub gathering articles, podcasts and acquisition news in one place, with consistent card formatting.
+- An **Insights** hub gathering deal announcements, articles and podcasts in one place, with filter pills (All · Deal announcements · POV · Podcast) and a unified banner-style card layout.
 - A **Contact** experience that routes founders, CEOs and LPs to the right person rather than a single generic form.
 
 ## What is intentionally not changed
@@ -75,7 +77,7 @@ On the current site, clicking a team member shows nothing more than the photo an
 
 1. Open https://tracy330.github.io/cap10-website-redesign/ on a desktop browser (it is also responsive on mobile).
 2. Walk through each section in the top navigation: **Our firm · Team · Portfolio · Responsible investing · Insights · Contact**.
-3. On the Team page, **hover** a portrait to see the quote, and **click a name** to read the full bio.
+3. On the Team page, **hover** a portrait to see the quote, and **click a name** to read the full bio. A few team members (Mandar, Neeshal, Gilly) do not yet have a favourite quote — their modal will display the bio only until they share one.
 4. Notes, edits and corrections are welcome — please send them to Tracy directly, or open an issue on this repository.
 
 ## Status
@@ -85,4 +87,6 @@ This is a **design prototype**, not production code. It is a single self-contain
 ## Repository contents
 
 - `index.html` — the prototype (open via the live preview link above)
+- `index-v1.html` / `index-v2.html` / `index-v3.html` — alternate hero-video variants of the prototype, used for stakeholder comparison
 - `README.md` — this document
+- `SESSION-RECAP.md` — running internal log of design and fix decisions across review sessions
