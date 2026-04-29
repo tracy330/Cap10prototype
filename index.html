@@ -346,6 +346,72 @@ footer a:hover{color:var(--amber)}
   .insight-modal p { font-size: 16px; line-height: 1.7; color: #1A1A1A; margin: 0 0 18px; }
   .insight-modal p:last-child { margin-bottom: 0; }
 
+.lede { font-size: 1.25rem; line-height: 1.5; max-width: 60ch; margin: 0 0 3rem; opacity: 0.85; }
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.insight-card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.insight-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+.insight-card .insight-kind { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(217,119,87); margin-bottom: 0.25rem; }
+.insight-card .insight-date { font-size: 0.85rem; opacity: 0.6; margin-bottom: 0.75rem; }
+.insight-card h3 { font-size: 1.15rem; margin: 0 0 0.5rem; line-height: 1.3; }
+.insight-card p { font-size: 0.95rem; line-height: 1.5; margin: 0; opacity: 0.85; }
+
+.contact-paths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0 4rem;
+}
+.contact-path {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 2.25rem;
+}
+.contact-path h2 { margin: 0.5rem 0 1rem; font-size: 1.5rem; }
+.contact-path p { line-height: 1.55; margin: 0 0 1.5rem; opacity: 0.85; }
+.contact-path .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgb(217,119,87);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+.contact-path .btn:hover { background: rgb(197,99,67); }
+
+.contact-office {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.contact-office-block .eyebrow { margin-bottom: 0.75rem; }
+.contact-office-block p { line-height: 1.6; margin: 0; }
+.contact-office-block a { color: rgb(217,119,87); text-decoration: none; }
+.contact-office-block a:hover { text-decoration: underline; }
+</style>
+
+<style data-page-hero-fix="1">
+#page-insights .page-hero h1, #page-contact .page-hero h1 { font-family: Fraunces, serif; color: var(--ink, #0e3b4e); font-weight: 400; font-size: clamp(40px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.01em; }
+#page-insights .page-hero .eyebrow, #page-contact .page-hero .eyebrow { color: var(--accent, #d97737); font-family: Inter, system-ui, sans-serif; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; }
+#page-insights, #page-contact { background: var(--bone, #f7f3ec); color: var(--ink, #0e3b4e); }
+#page-insights .page-section, #page-contact .page-section { background: var(--bone, #f7f3ec); }
+#page-insights p, #page-contact p { color: var(--ink, #0e3b4e); }
 </style>
 </head>
 <body>
@@ -374,7 +440,7 @@ footer a:hover{color:var(--amber)}
   <div class="container hero-grid" style="grid-template-columns: 1fr; max-width: 900px; margin: 0px auto;">
     <div>
       <div class="eyebrow">European mid-market private equity</div>
-      <h1 class="h1">Partners in <u>responsible change</u>.</h1>
+      <h1 class="h1">Partners in responsible change.</h1>
       <p class="lede">Led by financial entrepreneurs, we partner with talented individuals to transform high-potential businesses that others overlook. We bring large-cap sophistication, creativity and innovation to the European mid-market buyout space.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" data-route="portfolio">See our portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
@@ -392,6 +458,21 @@ footer a:hover{color:var(--amber)}
   </div></div></div>
 </section>
 
+<section class="block about-founder-block" style="padding:120px 0;background:var(--bone);position:relative">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:3fr 7fr;gap:72px;align-items:start;max-width:1200px;margin:0 auto">
+      <!-- LEFT: small "Our Firm" label only -->
+      <div style="color: var(--amber-2); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; gap: 10px;"><span style="width:22px;height:1px;background:var(--amber-2);display:inline-block"></span> About Cap10</div>
+      <!-- RIGHT: Original About copy, verbatim from live site -->
+      <div>
+        <div style="font-size:20px;line-height:1.65;color:var(--graphite);font-family:'Fraunces',serif;font-weight:400">
+          <p style="margin-bottom:28px">Cap10 was founded in 2021 by experienced financial entrepreneurs who bring large-cap sophistication, creativity and innovation to the European mid-market buyout space.</p>
+          <p style="margin-bottom:36px">Cap10 delivers asymmetric returns to the upside, by transforming underdeveloped mid-cap business gems into industry champions.</p>
+        </div>
+        <a href="#" onclick="cap10Nav('firm');window.scrollTo(0,0);return false;" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:var(--ink);color:var(--bone);border-radius:999px;font-size:14px;font-weight:600;text-decoration:none">Read more about our firm <span>→</span></a>
+      </div>
+    </div>
+  </div></section>
 <section class="block">
   <div class="container">
     <div class="sec-head">
@@ -464,21 +545,7 @@ footer a:hover{color:var(--amber)}
 
 
 
-<section class="block about-founder-block" style="padding:120px 0;background:var(--bone);position:relative">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:3fr 7fr;gap:72px;align-items:start;max-width:1200px;margin:0 auto">
-      <!-- LEFT: small "Our Firm" label only -->
-      <div style="color: var(--amber-2); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; gap: 10px;"><span style="width:22px;height:1px;background:var(--amber-2);display:inline-block"></span> About Cap10</div>
-      <!-- RIGHT: Original About copy, verbatim from live site -->
-      <div>
-        <div style="font-size:20px;line-height:1.65;color:var(--graphite);font-family:'Fraunces',serif;font-weight:400">
-          <p style="margin-bottom:28px">Cap10 was founded in 2021 by experienced financial entrepreneurs who bring large-cap sophistication, creativity and innovation to the European mid-market buyout space.</p>
-          <p style="margin-bottom:36px">Cap10 delivers asymmetric returns to the upside, by transforming underdeveloped mid-cap business gems into industry champions.</p>
-        </div>
-        <a href="#" onclick="cap10Nav('firm');window.scrollTo(0,0);return false;" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:var(--ink);color:var(--bone);border-radius:999px;font-size:14px;font-weight:600;text-decoration:none">Read more about our firm <span>→</span></a>
-      </div>
-    </div>
-  </div></section>
+
 
 <section class="block">
   <div class="container">
@@ -525,12 +592,7 @@ footer a:hover{color:var(--amber)}
     <div class="foot-grid">
       <h2>Interested in <em>partnering</em> with us?</h2>
       <div class="foot-ctas">
-        <a class="foot-card" data-route="contact">
-          <div class="kind">Founders &amp; CEOs</div>
-          <h4>I'm building a company.</h4>
-          <p>Looking for capital and an operating partner for your next chapter? Let's talk.</p>
-          <span class="go">Start a conversation →</span>
-        </a>
+        
         <a class="foot-card" data-route="contact">
           <div class="kind">Limited Partners</div>
           <h4>I'm an institutional investor.</h4>
@@ -559,7 +621,7 @@ footer a:hover{color:var(--amber)}
       <!-- LEFT: Fabrice portrait — large, square, rounded edges -->
       <div style="position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px -30px rgba(14,59,78,.35);background:var(--bone-2)">
         <img src="https://cms.cap10partners.com/uploads/small_Fabrice_Nottin_1_e320adde32.png" alt="Fabrice Nottin, Founding Partner, Cap10" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;filter:saturate(.95)">
-        <div style="position:absolute;left:24px;bottom:20px;background:rgba(14,59,78,.92);backdrop-filter:blur(6px);padding:14px 18px;border-radius:12px;color:var(--bone)">
+        <div style="position:absolute;left:24px;bottom:0px;background:rgba(14,59,78,.92);backdrop-filter:blur(6px);padding:14px 18px;border-radius:12px;color:var(--bone)">
           <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;line-height:1.1">Fabrice Nottin</div>
           <div style="font-size:12px;color:var(--amber);margin-top:3px;letter-spacing:.06em;text-transform:uppercase">Founding Partner</div>
         </div>
@@ -576,8 +638,8 @@ footer a:hover{color:var(--amber)}
           <p style="margin-bottom:0">What makes Cap10 different is that we are <strong style="font-weight:600">purposefully built to be a long-term partner</strong> rather than a short-term trader. <strong style="font-weight:600">We pair a patient, flexible approach to ownership — including continued participation for existing shareholders and meaningful equity for current and future management — with the operational experience, sector conviction and network that an ambitious business actually draws upon.</strong> We invest in four themes we know deeply: niche industrials, essential consumer, health &amp; pharma, and infrastructure solutions. And we measure ESG as a value driver, not a marketing line.</p>
         </div>
         <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap">
-          <a href="#" style="padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:8px">▶ Life of a Dealmaker</a>
-          <a href="https://www.linkedin.com/in/fabricenottin/" target="_blank" style="padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none">↗ LinkedIn</a>
+          <a href="https://www.youtube.com/watch?v=L7wSue7MAjM" target="_blank" rel="noopener">▶ Life of a Dealmaker</a>
+          <a href="https://www.linkedin.com/company/cap10-partners-llp" target="_blank" style="padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none">↗ LinkedIn</a>
         </div>
       </div>
     </div>
@@ -673,7 +735,7 @@ footer a:hover{color:var(--amber)}
     <p>We are ambitious financial entrepreneurs who bring large-cap sophistication and creativity to European mid-market buyouts. We aim to excel, build strong conviction and identify misunderstood niches by challenging common thinking.</p>
     <p class="hint">Hover a photo for a quote · click a name to read the full bio.</p>
     <div class="team-section"><h3>Partners</h3><div class="team-grid">
-<div class="member" data-id="fabrice">
+<div class="member" data-id="fabrice" onclick="cap10ShowBio('fabrice')">
   <div class="photo" data-action="bio" data-id="fabrice"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Fabrice_Nottin_1_e320adde32.png" alt="Fabrice Nottin" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">FN</div>
     <div class="overlay"><q>Extraordinary things happen when vision, passion and the right people come together.</q></div>
@@ -681,7 +743,7 @@ footer a:hover{color:var(--amber)}
   <a class="name" data-action="bio" data-id="fabrice">Fabrice Nottin</a>
   <div class="role">Founding Partner</div>
 </div>
-<div class="member" data-id="luca">
+<div class="member" data-id="luca" onclick="cap10ShowBio('luca')">
   <div class="photo" data-action="bio" data-id="luca"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Luca_Bonanomi_1_28051a8e86.png" alt="Luca Bonanomi" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">LB</div>
     <div class="overlay"><q>There is no linear path to greatness.</q></div>
@@ -689,7 +751,7 @@ footer a:hover{color:var(--amber)}
   <a class="name" data-action="bio" data-id="luca">Luca Bonanomi</a>
   <div class="role">Partner</div>
 </div>
-<div class="member" data-id="calum">
+<div class="member" data-id="calum" onclick="cap10ShowBio('calum')">
   <div class="photo" data-action="bio" data-id="calum"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Calum_Mc_Ewen_R5_5909_new_6f546a7ddf.jpg" alt="Calum MacEwen" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">CM</div>
     <div class="overlay"><q>The man who thinks he can and the man who thinks he can’t are both right.</q></div>
@@ -697,7 +759,7 @@ footer a:hover{color:var(--amber)}
   <a class="name" data-action="bio" data-id="calum">Calum MacEwen</a>
   <div class="role">Partner</div>
 </div>
-<div class="member" data-id="mandar">
+<div class="member" data-id="mandar" onclick="cap10ShowBio('mandar')">
   <div class="photo" data-action="bio" data-id="mandar"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Mandar_Kulkarni_21f902d844.png" alt="Mandar Kulkarni" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">MK</div>
     <div class="overlay"><q>Care.</q></div>
@@ -705,7 +767,7 @@ footer a:hover{color:var(--amber)}
   <a class="name" data-action="bio" data-id="mandar">Mandar Kulkarni</a>
   <div class="role">Partner, CFO &amp; COO</div>
 </div></div></div><div class="team-section"><h3>Investment Team</h3><div class="team-grid">
-<div class="member" data-id="roel">
+<div class="member" data-id="roel" onclick="cap10ShowBio('roel')">
   <div class="photo" data-action="bio" data-id="roel"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Roel_Van_Ark_LR_Roel_Van_Ark_R5_5843_fe76e113af.jpg" alt="Roel van Ark" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">RA</div>
     <div class="overlay"><q>Life can only be understood backwards; but it must be lived forwards.</q></div>
@@ -713,7 +775,7 @@ footer a:hover{color:var(--amber)}
   <a class="name" data-action="bio" data-id="roel">Roel van Ark</a>
   <div class="role">Principal</div>
 </div>
-<div class="member" data-id="christophe">
+<div class="member" data-id="christophe" onclick="cap10ShowBio('christophe')">
   <div class="photo" data-action="bio" data-id="christophe"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Christophe_Auber_b1125c7cf5.jpg" alt="Christophe Auber" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">CA</div>
     <div class="overlay"><q>Happiness is the key to success. If you love what you are doing, you will be successful.</q></div>
@@ -721,7 +783,7 @@ footer a:hover{color:var(--amber)}
   <a class="name" data-action="bio" data-id="christophe">Christophe Auber</a>
   <div class="role">Vice President</div>
 </div>
-<div class="member" data-id="tigran">
+<div class="member" data-id="tigran" onclick="cap10ShowBio('tigran')">
   <div class="photo" data-action="bio" data-id="tigran"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Tigran_Petrosyan_2_8de39452ed.png" alt="Tigran Petrosyan" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">TP</div>
     <div class="overlay"><q>Dream big. Work hard. Be humble.</q></div>
@@ -729,7 +791,7 @@ footer a:hover{color:var(--amber)}
   <a class="name" data-action="bio" data-id="tigran">Tigran Petrosyan</a>
   <div class="role">Managing Director</div>
 </div>
-<div class="member" data-id="joe">
+<div class="member" data-id="joe" onclick="cap10ShowBio('joe')">
   <div class="photo" data-action="bio" data-id="joe"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Joe_Baxter_bfa823639e.jpg" alt="Joe Baxter" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">JB</div>
     <div class="overlay"><q>Success is not final; failure is not fatal: it is the courage to continue that counts.</q></div>
@@ -737,7 +799,7 @@ footer a:hover{color:var(--amber)}
   <a class="name" data-action="bio" data-id="joe">Joe Baxter</a>
   <div class="role">Director</div>
 </div>
-<div class="member" data-id="max">
+<div class="member" data-id="max" onclick="cap10ShowBio('max')">
   <div class="photo" data-action="bio" data-id="max"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Maximillian_Dialdas_cb07524a41.png" alt="Maximilian Dialdas" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">MD</div>
     <div class="overlay"><q>The only limit to our realization of tomorrow is our doubts of today.</q></div>
@@ -748,28 +810,28 @@ footer a:hover{color:var(--amber)}
 
 
 
-<div class="member" data-id="neeshal">
+<div class="member" data-id="neeshal" onclick="cap10ShowBio('neeshal')">
   <div class="photo" data-action="bio" data-id="neeshal">
     <div class="initials">NR</div>
     <div class="overlay"><q>Talent.</q></div>
   </div>
   <a class="name" data-action="bio" data-id="neeshal">Neeshal Rao</a>
   <div class="role">Director of Funds &amp; Finance</div>
-</div><div class="member" data-id="tracy">
+</div><div class="member" data-id="tracy" onclick="cap10ShowBio('tracy')">
   <div class="photo" data-action="bio" data-id="tracy"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Tracy_Collison_2_07a7f46942.png" alt="Tracy Collison" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">TC</div>
     <div class="overlay"><q>Treat people how you wish to be treated.</q></div>
   </div>
   <a class="name" data-action="bio" data-id="tracy">Tracy Collison</a>
   <div class="role">Office Manager</div>
-</div><div class="member" data-id="ana">
+</div><div class="member" data-id="ana" onclick="cap10ShowBio('ana')">
   <div class="photo" data-action="bio" data-id="ana"><img class="strapi" src="https://cms.cap10partners.com/uploads/small_Ana_Da_Silva_2_d1738ed1a7.png" alt="Ana Da Silva" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0px; transition: 0.3s;">
     <div class="initials" style="display: none;">AS</div>
     <div class="overlay"><q>You were born to change the world, not add to the noise.</q></div>
   </div>
   <a class="name" data-action="bio" data-id="ana">Ana Da Silva</a>
   <div class="role">Executive Assistant</div>
-</div><div class="member" data-id="gilly">
+</div><div class="member" data-id="gilly" onclick="cap10ShowBio('gilly')">
   <div class="photo" data-action="bio" data-id="gilly">
     <div class="initials">GA</div>
     <div class="overlay"><q>Care.</q></div>
@@ -783,7 +845,7 @@ footer a:hover{color:var(--amber)}
   <div class="container">
     <div class="sec-head">
       <h2>Fun. Collaborative. Entrepreneurial.</h2>
-      <p>It's how we work, and it's why people stay. Off-sites in the Alps, climbing in Chamonix, kayaking in Marseille, cycling Mont Ventoux — and the quieter rhythm of Friday investment committee in London.</p>
+      <p>It’s how we work, and why people stay. Off‑sites in Chamonix and skiing up Mont Blanc, kayaking in Marseille, cycling Mont Ventoux — balanced by the quieter rhythm of working sessions with a view.</p>
     </div>
     <div class="gallery" style="grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; gap: 12px;"><div class="tile wide tall" style="grid-area: span 2 / span 2; position: relative; overflow: hidden; border-radius: 14px; background: rgb(10, 43, 57); cursor: pointer;">
       <img src="https://cms.cap10partners.com/uploads/Chamonix_wall_climbing_2dd28451fa.jpeg" alt="Wall climbing · Chamonix off-site" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease">
@@ -885,7 +947,7 @@ footer a:hover{color:var(--amber)}
           </div>
         </div>
       </article>
-      <div data-set="realised" style="padding: 48px 36px; background: rgb(255, 255, 255); border: 1px solid var(--line); border-radius: 18px; text-align: center; color: var(--muted); font-size: 14.5px; display: none;">No realised investments disclosed publicly at this time.</div>
+      <div data-set="realised" style="padding: 48px 36px; background: rgb(255, 255, 255); border: 1px solid var(--line); border-radius: 18px; text-align: center; color: var(--muted); font-size: 14.5px; display: none;">Watch this space — we haven't realised any investments yet.</div>
     </div>
   </div>
 </section>
@@ -1081,6 +1143,140 @@ footer a:hover{color:var(--amber)}
     </div>
   </section>
 </div>
+<!-- INSIGHTS PAGE -->
+<div id="page-insights" class="page" style="display:none;">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">Insights</div>
+      <h1>News, perspectives and announcements.</h1>
+    </div>
+  </div>
+
+  <div class="page-section">
+    <div class="page-section-inner">
+      <p class="lede">See our latest news, interviews and videos. For media enquiries, please email <a href="mailto:corporate@cap10partners.com">corporate@cap10partners.com</a>.</p>
+
+      <div class="insights-grid">
+
+        <a class="insight-card" href="https://www.cap10partners.com/news/Sureserve-acquires-Bonarius" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">10 November 2025</div>
+          <h3>Sureserve Acquires Bonarius</h3>
+          <p>Sureserve has announced the acquisition of Bonarius, a Netherlands-based compliance and energy services business — its first international step under Cap10's ownership.</p>
+        </a>
+
+        <a class="insight-card" href="https://www.cap10partners.com/news/sureserve-acquires-low-carbon-exchange" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">04 November 2024</div>
+          <h3>Sureserve Acquires LCX</h3>
+          <p>Cap10 portfolio company Sureserve has acquired Low Carbon Exchange Limited (LCX), marking its third strategic acquisition in 2024.</p>
+        </a>
+
+        <a class="insight-card" href="https://www.cap10partners.com/news/dealmaker-podcast" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+          <div class="insight-kind">Podcast</div>
+          <div class="insight-date">14 May 2024</div>
+          <h3>Life of a Dealmaker</h3>
+          <p>Cap10 Founding Partner Fabrice Nottin is featured in Mayer Brown's podcast 'Life of a Dealmaker', tracing his path from CVC, UBS, Lion Capital and Apollo to founding Cap10.</p>
+        </a>
+
+        <a class="insight-card" href="https://www.cap10partners.com/news/example-article" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+          <div class="insight-kind">Team News</div>
+          <div class="insight-date">08 May 2024</div>
+          <h3>Luca Bonanomi joins as Partner</h3>
+          <p>Cap10, the specialist pan-European private equity firm based in London, has appointed Luca Bonanomi as the firm's new Partner.</p>
+        </a>
+
+        <a class="insight-card" href="https://www.cap10partners.com/news/funds-advised-by-cap10-partners-invest-in-compass-community-a-leading-uk-childrens-services-provider" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">08 May 2024</div>
+          <h3>Compass Investment</h3>
+          <p>On 3 May 2024, Cap10 Partners reached an agreement to partner with Compass Community, one of the UK's leading providers of therapeutic fostering and specialist care.</p>
+        </a>
+
+        <a class="insight-card" href="https://www.cap10partners.com/news/cap10-backed-sureserve-group-acquires-duality-group" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">11 April 2024</div>
+          <h3>Sureserve Acquires Duality Group</h3>
+          <p>Cap10 portfolio company Sureserve Group, the leading compliance and renewable energy services group, completes the acquisition of Duality Group.</p>
+        </a>
+
+        <a class="insight-card" href="https://www.cap10partners.com/news/sureserve-group-to-acquire-swale-heating" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">22 November 2023</div>
+          <h3>Sureserve Acquires Swale Heating</h3>
+          <p>Sureserve Group has agreed to acquire 100% of Swale Heating Ltd, expanding its compliance and renewable energy services platform.</p>
+        </a>
+
+        <a class="insight-card" href="https://www.cap10partners.com/news/funds-advised-by-cap10-partners-complete-sureserve-acquisition" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+          <div class="insight-kind">Acquisition News</div>
+          <div class="insight-date">12 July 2023</div>
+          <h3>Cap10 Completes Sureserve Acquisition</h3>
+          <p>Cap10 has completed the acquisition of 100% of Sureserve Group PLC (LSE:SUR), taking the UK-leading compliance and renewable energy services group private.</p>
+        </a>
+
+        <a class="insight-card" href="https://www.cap10partners.com/news/first-close" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+          <div class="insight-kind">Firm News</div>
+          <div class="insight-date">09 December 2021</div>
+          <h3>First Close</h3>
+          <p>Cap10 has announced the first close for its inaugural fund with €300 million of committed capital.</p>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="page-contact" class="page" style="display:none;">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">Contact</div>
+      <h1>Let's start a conversation.</h1>
+    </div>
+  </div>
+
+  <div class="page-section">
+    <div class="page-section-inner">
+      <p class="lede">Whether you're a founder considering your next chapter or an institutional investor exploring a partnership with Cap10, we'd like to hear from you.</p>
+
+      <div class="contact-paths">
+
+        
+
+        <div class="contact-path">
+          
+          <h2>I'm an institutional investor.</h2>
+          <p>To learn more about Cap10's strategy, current fund opportunities, or to speak with our investor relations team directly.</p>
+          <a class="btn" href="mailto:investorrelations@cap10partners.com?subject=LP%20enquiry">Contact investor relations →</a>
+        </div>
+
+      </div>
+
+      <div class="contact-office">
+        <div class="contact-office-block">
+          <div class="eyebrow">Office</div>
+          <p>
+            12 Charles II Street<br>
+            St. James's<br>
+            London SW1Y 4QU<br>
+            United Kingdom
+          </p>
+        </div>
+
+        <div class="contact-office-block">
+          <div class="eyebrow">Email</div>
+          <p><a href="mailto:corporate@cap10partners.com">corporate@cap10partners.com</a></p>
+        </div>
+
+        <div class="contact-office-block">
+          <div class="eyebrow">Investors login</div>
+          <p><a href="https://icx.efrontcloud.com/@9396/cap10_investors_login/login.aspx" target="_blank" rel="noopener">Access the investor portal →</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>      
 </main>
 <footer class="site">
   <div class="container">
@@ -1116,7 +1312,7 @@ footer a:hover{color:var(--amber)}
     </div>
     <div class="foot-bottom">
       <span>© 2026 CharlesII Partners LLP. Registered number OC458966.</span>
-      <span><a>Disclaimer</a> · <a>Cookie policy</a> · <a>Terms</a></span>
+      <span><a href="#" data-policy="disclaimer" style="cursor:pointer">Disclaimer</a> · <a href="#" data-policy="cookie" style="cursor:pointer">Cookie policy</a> · <a href="#" data-policy="terms" style="cursor:pointer">Terms</a></span>
     </div>
   </div>
 </footer>
@@ -1146,7 +1342,7 @@ window.__data = {
 
 (function() {
   'use strict';
-  const PAGES = ['home', 'firm', 'team', 'portfolio', 'responsible'];
+  const PAGES = ['home', 'firm', 'team', 'portfolio', 'responsible', 'insights', 'contact']
   const PAGE_IDS = PAGES.map(p => 'page-' + p);
 
   function showPage(name) {
@@ -1154,34 +1350,13 @@ window.__data = {
       const el = document.getElementById(id);
       if (el) el.style.display = (id === ('page-' + name) ? 'block' : 'none');
     });
-    document.querySelectorAll('.topbar a[data-route]').forEach(a => {
+    document.querySelectorAll('a[data-route]').forEach(a => {
       a.classList.toggle('active', a.dataset.route === name);
     });
   }
 
   function navTo(target) {
-    if (target === 'insights') {
-      showPage('home');
-      requestAnimationFrame(() => {
-        const home = document.getElementById('page-home');
-        const ins = home && Array.from(home.querySelectorAll('section')).find(s => {
-          const h = s.querySelector('h2');
-          return h && h.textContent.includes('Insights');
-        });
-        if (ins) ins.scrollIntoView({behavior: 'smooth', block: 'start'});
-        else window.scrollTo(0, 0);
-      });
-      return;
-    }
-    if (target === 'contact') {
-      showPage('home');
-      requestAnimationFrame(() => {
-        const footer = document.querySelector('footer.site, .foot-cta');
-        if (footer) footer.scrollIntoView({behavior: 'smooth', block: 'start'});
-        else window.scrollTo(0, document.body.scrollHeight);
-      });
-      return;
-    }
+ 
     if (PAGES.indexOf(target) !== -1) {
       showPage(target);
       window.scrollTo(0, 0);
@@ -1192,7 +1367,7 @@ window.__data = {
   }
   window.cap10Nav = navTo;
 
-  document.querySelectorAll('.topbar a[data-route]').forEach(a => {
+  document.querySelectorAll('a[data-route]').forEach(a => {
     a.style.cursor = 'pointer';
     a.addEventListener('click', e => { e.preventDefault(); navTo(a.dataset.route); });
   });
@@ -1222,20 +1397,38 @@ window.__data = {
     if (cb) cb.addEventListener('click', closeBio);
 
     window.cap10ShowBio = function(id) {
-      const p = teamById[id];
-      if (!p) return;
-      const body = scrim.querySelector('.bio-body');
-      if (!body) return;
-      const photo = p.photoUrl
-        ? '<img src="' + p.photoUrl + '" alt="' + p.name + '" />'
-        : '<div class="bio-photo-init">' + (p.initials || '') + '</div>';
-      const pull = p.pull
-        ? '<div class="bio-pull">“' + p.pull + '”' + (p.attrib ? '<div class="bio-attrib">' + p.attrib + '</div>' : '') + '</div>'
-        : '';
-      const bioText = p.bio || '<em style="color:#999">[Bio coming soon]</em>';
-      body.innerHTML = '<div class="bio-photo-wrap">' + photo + '</div><div class="bio-info"><div class="bio-name">' + p.name + '</div><div class="bio-role">' + p.role + '</div>' + pull + '<div class="bio-text">' + bioText + '</div></div>';
-      scrim.classList.add('open');
-    };
+    const p = teamById[id];
+    if (!p) return;
+    const body = scrim.querySelector('.body');
+    if (!body) return;
+    var __mImg = document.querySelector('#page-team .member[data-id="' + id + '"] img');
+    var __srcUrl = (p.photoUrl) || (__mImg && __mImg.getAttribute('src')) || '';
+    
+    body.innerHTML = `
+      <div class="modal" id="modal-content">
+        <button class="close" onclick="document.getElementById('modal-scrim').classList.remove('open')">�</button>
+        <div class="modal-head">
+          <div class="avatar">
+            ${__srcUrl ? `<img src="${__srcUrl}">` : `<div class="initials">${p.initials}</div>`}
+          </div>
+          <div class="who">
+            <div class="bio-name">${p.name}</div>
+            <div class="role-title">${p.role}</div>
+          </div>
+        </div>
+        <div class="pull">
+          <div class="quote">${p.pull || p.hover || ''}</div>
+          <div class="attrib"> ${p.attrib || ''}</div>
+        </div>
+        <div class="body">
+          <div class="bio-content">
+            ${p.bio ? '<p>' + p.bio.replace(/\|\|/g, '</p><p>') + '</p>' : ''}
+          </div>
+        </div>
+      </div>
+    `;
+    scrim.classList.add('open');
+  }
 
     document.querySelectorAll('a[data-action="bio"]').forEach(a => {
       a.addEventListener('click', e => {
@@ -1295,6 +1488,73 @@ window.__data = {
   }
 })();
 
+</script>
+<script data-pf-filter-installed="1">
+(function(){
+  function applyFilter(which){
+    document.querySelectorAll("#page-portfolio [data-set]").forEach(function(el){
+      el.style.display = (el.getAttribute("data-set") === which) ? "" : "none";
+    });
+    document.querySelectorAll("#page-portfolio .toggle").forEach(function(b){
+      b.classList.toggle("active", b.getAttribute("data-filter") === which);
+    });
+  }
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("#page-portfolio .toggle[data-filter]");
+    if (t) { e.preventDefault(); applyFilter(t.getAttribute("data-filter")); }
+  });
+  document.addEventListener("DOMContentLoaded", function(){ applyFilter("current"); });
+})();
+</script>
+
+<style>
+#policy-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;display:none;align-items:center;justify-content:center;padding:24px;}
+#policy-modal-backdrop.open{display:flex;}
+#policy-modal{background:var(--bone,#f7f3ec);color:var(--ink,#161616);max-width:760px;width:100%;max-height:88vh;overflow-y:auto;border-radius:18px;padding:48px 56px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.4);}
+#policy-modal h2{margin:0 0 24px 0;font-size:32px;font-weight:600;}
+#policy-modal p{font-size:15.5px;line-height:1.65;margin:0 0 16px 0;}
+#policy-modal .pmc{position:absolute;top:18px;right:22px;background:transparent;border:0;font-size:32px;cursor:pointer;color:var(--ink,#161616);line-height:1;padding:0;width:36px;height:36px;}
+@media(max-width:640px){#policy-modal{padding:36px 24px;}#policy-modal h2{font-size:24px;}}
+</style>
+
+<div id="policy-modal-backdrop" role="dialog" aria-modal="true">
+  <div id="policy-modal">
+    <button class="pmc" aria-label="Close">×</button>
+    <h2 id="policy-modal-title"></h2>
+    <div id="policy-modal-body"></div>
+  </div>
+</div>
+<script data-policy-modal-installed="1">
+(function(){
+  var data = {
+    disclaimer: { title: "Disclaimer", body: "This website is managed by CharlesII Partners LLP (trading as Cap10 Partners), a limited liability partnership incorporated in England and Wales with registered number OC458966.\n\nThe information contained on this website is provided for general information purposes only and does not constitute legal, financial, investment, or other professional advice. While we endeavour to ensure that the information on this website is accurate and up to date, no representations or warranties, express or implied, are made regarding its accuracy, completeness, or reliability. Any reliance you place on such information is strictly at your own risk. To the fullest extent permitted by law, CharlesII Partners LLP (trading as Cap10 Partners) accepts no liability for any loss or damage arising from the use of, or reliance on, this website or its content." },
+    cookie: { title: "Cookie Policy", body: "Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site.\n\nA cookie is a small file of letters and numbers that we store on your browser or the hard drive of your computer if you agree. Cookies contain information that is transferred to your computer’s hard drive. We use the following cookies:\n\nStrictly necessary cookies. These are cookies that are required for the operation of our website.\n\nAnalytical or performance cookies. These allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users are finding what they are looking for easily.\n\nFunctionality cookies. These are used to recognise you when you return to our website.\n\nYou can find more information about the individual cookies we use and the purposes for which we use them in the table below:\n\nCookie Preference (cap10.cookieConsent) — 6 months. This cookie is used to remember a user’s choice about cookies on cap10partners.com. Where users have previously indicated a preference, that user’s preference will be stored in this cookie.\n\nUniversal Analytics (Google) — _ga (6 months), _gid (12 months), _gat (1 minute). These cookies are used to collect information about how visitors use our website. We use the information to compile reports and to help us improve the website. The cookies collect information in a way that does not directly identify anyone, including the number of visitors to the website and blog, where visitors have come to the website from and the pages they visited.\n\nRead Google’s overview of privacy and safeguarding data. To opt out of being tracked by Google Analytics across all websites, visit http://tools.google.com/dlpage/gaoptout." },
+    terms: { title: "Terms & Conditions", body: "These terms and conditions of use (\"T&Cs\") set out how you may use the website www.cap10partners.com and the publicly available content available on its pages (collectively, the \"Site\").\n\nThese T&Cs apply between CharlesII Partners LLP (“Cap10”, \"we\", \"us\" or \"our\") trading as ‘Cap10 Partners’ and you, the person accessing or using the Site (\"you\" or \"your\"). You should read these T&Cs carefully before using the Site. By using the Site or otherwise indicating your consent, you are bound by these T&Cs. If you do not agree with any of these T&Cs, you should stop using the Site immediately.\n\nIf you have any questions or complaints in relation to the Site or these T&Cs, please contact corporate@cap10partners.com.\n\n1. Regulatory Information\n\nThis Site is managed by CharlesII Partners LLP (trading under the name ‘Cap10 Partners’), which is a limited liability partnership registered in England and Wales under Company No. OC458966 and with a registered address at 12 Charles II Street, St James' Park, London SW1Y 4QU.\n\nNo information on the Site constitutes investment advice or an offer or a solicitation of interest in respect of the acquisition or sale of any securities in any jurisdiction.\n\n2. Using the Site\n\nAll information contained on the Site is intended solely for your own personal, informational use. You are not permitted to reproduce, retransmit, disseminate, sell, license, distribute, republish, broadcast, post, circulate or commercially exploit such information in any manner or media or to use the information for any unlawful purpose. You may link to the Site, provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it. You must not establish a link in such a way as to suggest any form of association, approval or endorsement on our part where none exists.\n\nAs a condition of your use of the Site, you agree not to: use the Site in any way and for any purpose which is unlawful or in any way that infringes any intellectual property rights or breaches any obligations of confidence, or to cause inconveniences, annoyance to any other persons or in any other way which is in violation of any applicable law or regulation in any jurisdiction; misuse or attack our Site by knowingly introducing viruses, trojans, worms, logic bombs or any other material which is malicious or technologically harmful (such as by way of a denial-of-service attack); attempt to gain unauthorised access to our Site, the server on which our Site is stored or any server, computer or database connected to our Site; or conduct, facilitate, authorise or permit any text or data mining or web scraping in relation to our Site (insofar as we are able to exclude or limit such mining or scraping by contract under the laws which are applicable to us).\n\nWe also make no promise that the Site is appropriate or available for use in locations outside of the UK. If you choose to access the Site from outside the UK, you acknowledge you do so at your own initiative and are responsible for compliance with local laws where they apply.\n\n3. Suspension and withdrawal of the Site\n\nOur Site is made available free of charge. We do not guarantee that the Site will always be available or be uninterrupted. We may update and change our Site from time to time, and suspend or withdraw or restrict the availability of all or any part of our Site at any time for business or operational reasons.\n\n4. Intellectual Property Rights\n\nNothing in these T&Cs grants you any legal rights in the Site or the Content other than as necessary for you to access it. You agree not to adjust, try to circumvent or delete any notices contained on the Site or the Content (including any intellectual property notices) and in particular, in any digital rights or other security technology embedded or contained within the Site or the Content.\n\n5. Accuracy of information\n\nWe try to make sure that the Site is accurate, up-to-date and free from bugs, but we cannot promise that it will be. Any Content is provided for your general information purposes only and to inform you about us and our work and other information and websites that may be of interest, but has not been tailored to your specific requirements or circumstances. It does not constitute advice or a recommendation of any kind.\n\n6. Liability\n\nTo the greatest extent permitted by applicable law, we hereby expressly exclude our liability for any losses, claims, actions, costs, expenses, charges or damages arising directly or indirectly from (i) your use of or reliance on any Content on the Site; and (ii) (without limiting (i) above) any data loss, data non-availability or cybersecurity events or circumstances. Nothing in these T&Cs excludes or limits our liability for any death or personal injury, for fraud or fraudulent misrepresentation, or any other liability that the law does not allow us to exclude or limit. You agree that you are solely responsible for all costs and expenses you may incur in relation to your use of the Site.\n\nTo the greatest extent permitted by applicable law, we hereby disclaim all representations, warranties and conditions, except to the extent expressly set out in these T&Cs. We are also not liable to you if we fail to comply with these T&Cs because of circumstances beyond our reasonable control.\n\n7. General\n\nWe may transfer our rights and obligations under these T&Cs to another organisation. We will always tell you in writing if this happens, and we will ensure that the transfer will not affect your rights under these T&Cs.\n\nThese T&Cs are governed by English law and the courts of England and Wales have exclusive jurisdiction over any disputes." }
+  };
+  function renderBody(text){
+    var paras = text.split(/\n{2,}/);
+    return paras.map(function(p){ return "<p>" + p.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>") + "</p>"; }).join("");
+  }
+  function open(key){
+    var d = data[key]; if (!d) return;
+    var bd = document.getElementById("policy-modal-backdrop");
+    document.getElementById("policy-modal-title").textContent = d.title;
+    document.getElementById("policy-modal-body").innerHTML = renderBody(d.body);
+    bd.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function close(){
+    document.getElementById("policy-modal-backdrop").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("[data-policy]");
+    if (t) { e.preventDefault(); open(t.getAttribute("data-policy")); return; }
+    if (e.target.classList && e.target.classList.contains("pmc")) { close(); return; }
+    if (e.target.id === "policy-modal-backdrop") close();
+  });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") close(); });
+})();
 </script>
 </body>
 </html>
