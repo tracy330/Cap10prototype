@@ -1,6 +1,6 @@
 Cap10 Website Redesign — Session Recap
 File: SESSION-RECAP.md
-Last updated: 29 April 2026
+Last updated: 29 April 2026 (Session 3 — afternoon)
 Repository
 tracy330/cap10-website-redesign — https://github.com/tracy330/cap10-website-redesign
 Live preview: https://tracy330.github.io/cap10-website-redesign/
@@ -89,3 +89,41 @@ Live (always shows main): https://tracy330.github.io/cap10-website-redesign/
 Variant previews (once rebuilt): …/index-v1.html, …/index-v2.html, …/index-v3.html
 File commit history: https://github.com/tracy330/cap10-website-redesign/commits/main/index.html
 Working baseline file: https://raw.githubusercontent.com/tracy330/cap10-website-redesign/afe0552/index.html
+
+
+Session 3 — 29 April 2026 (continued — afternoon)
+Goal: Apply discrete fixes against the reverted afe0552 baseline, then redesign the Insights page to match the supplied reference.
+Workflow used (every fix):
+
+Build patched HTML in browser memory.
+Verify via JS parser + structural checks.
+Trigger blob download to user's local Downloads folder.
+User uploads via GitHub web UI ("Add file → Upload files").
+Commit message typed into the pop-up dialog (NEVER in the file body).
+Wait ~10–30s for GitHub Pages CDN rebuild, hard-reload preview with cache-bust query string to verify.
+
+Commits landed (in order):
+
+9de8a84 — Encoding glitch fix. De-mojibaked 170+ instances throughout the file (em-dashes, smart quotes, euro signs). Verified visually clean across pages.
+ca94496 + 4015263 — Team bio modal duplication fix (two commits). The static modal HTML was being populated with a full new modal injected inside its own .body wrapper, causing two stacked bios. Fix: emptied the static modal placeholders and populated .modal-head, .pull, and .body separately. First commit accidentally consumed the scrim.classList.add('open') line; second commit restored it. Verified Fabrice + Luca + Tracy modals all open cleanly with no duplication.
+d910978 — Insights cards style alignment. Changed .insight-kind kicker colour from rgb(217,119,87) to var(--amber-2), and .insight-card border-radius from 12px to 16px. (User declined adding a founder card on Contact: "we decided to remove the founder card because it is not relevant to our new investment set up.")
+b34903e — Hide bio quote block for Mandar / Neeshal / Gilly (placeholder bios with no real quote yet) + Life-at-Cap10 caption updates. Made the modal .pull block conditional on p.pull existing — hover preview text in the grid stays, only the modal pull-quote hides. Also stripped years from 3 gallery image alt texts and renamed "Team off-site · Chamonix" to "Working session · Chamonix".
+c5db86d — Insights page full redesign per supplied reference screenshot. New heading "Deal news and our point of view." New subhead about platform milestones. Added 4 filter pills (All / Deal announcements / POV / Podcast) with click handlers. Replaced all 9 cards with new banner-style structure: dark teal banner with diagonal stripe pattern, centred amber label (e.g. SURESERVE × BONARIUS, LIFE OF A DEALMAKER, LUCA BONANOMI, FIRST CLOSE, CAP10 × COMPASS); below banner an amber kicker, Fraunces serif title, and muted date.
+
+Outcome: All 5 commits verified live. User confirmed the Insights redesign matches the supplied screenshot once browser cache was cleared. The file is now 509,752 chars / 1,648 lines, all 5 script blocks parse cleanly. Latest commit on main: c5db86d.
+Lessons reinforced:
+
+Hard-reload preview with a cache-bust query string after every commit (browser caches very aggressively).
+One fix per commit. Verify before moving to the next. Bundling fixes is where regressions hide.
+For multi-line JS patches, count brace balance and re-verify the surrounding lines were not consumed by the replacement (the ca94496 → 4015263 incident).
+For placeholder bios, hover preview stays — only the modal pull-quote block hides.
+The coral CTA on Contact is intentional (only coral element in the design).
+
+Outstanding work — next session
+Fix #4 (only remaining item from the original Day 2 plan): Re-create the three video variants (index-v1.html, index-v2.html, index-v3.html) from the new c5db86d baseline so they all carry today's fixes. The three older variant files in the repo are stale (predate today's work) and need regenerating. Each file should differ only in the hero video src — Mixkit is the source (Pexels is blocked on the user's network). Three videos already shortlisted: wind turbine, solar panel install, coastal aerial.
+Useful URLs (current)
+
+Repo: https://github.com/tracy330/cap10-website-redesign
+Live (always shows main): https://tracy330.github.io/cap10-website-redesign/
+Latest baseline: https://raw.githubusercontent.com/tracy330/cap10-website-redesign/c5db86d/index.html
+File commit history: https://github.com/tracy330/cap10-website-redesign/commits/main/index.html
