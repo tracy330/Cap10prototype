@@ -1,126 +1,71 @@
-# SESSION RECAP 2 — Cap10 Website Redesign
+# SESSION RECAP 2 — Cap10 Website Redesign Prototype
+_Repo: tracy330/cap10-website-redesign — Updated 30 April 2026_
 
-**Date:** 30 April 2026
-**Repo:** `tracy330/cap10-website-redesign`
-**Live site:** https://tracy330.github.io/cap10-website-redesign/
-
----
-
-## Overview
-
-This session covered three blocks of work, in order:
-
-1. **Three missing items added** from the original cap10partners.com site that were not yet in the prototype.
-2. **Full content audit** of all seven pages of the prototype against the original site, page by page.
-3. **Audit fixes applied** as ten atomic commits, then the three video variants rebuilt from the new baseline.
-
-The prototype URL did not change. All work landed on `main` and was verified live.
+This document captures the work completed across the redesign prototype sessions, layered on top of the original SESSION-RECAP. It is the single reference for what is in main, what is in the v1/v2/v3 variants, and what remains to do.
 
 ---
 
-## Part 1 — Three missing items added
+## 1. Three missing items (added in earlier session)
+- Fifth sector ("mission-critical business services") added to the Our Firm sector list.
+- Regulatory Disclosure block added to Responsible Investing with MIFIDPRU 8 and Responsible Investment Policy links.
+- Heading style fix applied so editorial typography matches across pages.
 
-### 1. Fifth sector card: Mission-critical business services (`512362a`)
+## 2. Full content audit (read-only) — all 7 pages
+A page-by-page audit was conducted comparing the prototype against cap10partners.com. Each finding was reviewed with the user and decisions were captured before any code changes were made.
 
-The original site listed five sectors in prose; the prototype had elevated four into cards. The fifth, **Mission-critical business services** (abbreviation **Mb.**), was added as a fifth card with copy in the same editorial voice as the others. The supporting prose, the H2 heading, and four other prose mentions were updated for consistency.
+## 3. Audit fixes — 10 atomic commits
+Fixes applied one per commit, each verified live with cache-bust before moving on.
 
-### 2. Regulatory Disclosure block on Responsible Investing (`1e5cdf4`)
-
-A Regulatory Disclosure block was added at the bottom of the Investing Responsibly page, with two amber bullet links:
-- **MIFIDPRU 8 disclosures** — https://cms.cap10partners.com/uploads/Mi_FIDPRU_8_Disclosure_41f3ffa4df.pdf
-- **Responsible Investment Policy — View policy** — https://cms.cap10partners.com/uploads/Cap10_Responsible_Investment_Policy_with_appendix_update_19_Feb_2026_24848f9271.pdf
-
-### 3. Heading style fix on the Regulatory Disclosure block (`57e2c7f`)
-
-The H2 was rendering near-black instead of the page's teal/ink token. Style was matched to the page's other H2s (Fraunces serif, `color:var(--ink)`, `font-size:clamp(28px,3.2vw,42px)`).
-
----
-
-## Part 2 — Page-by-page audit (read-only)
-
-The original cap10partners.com site was opened in a parallel tab and each page was compared against the prototype. Findings were grouped into three buckets per page: **confirmed matches**, **intentional redesign differences**, and **genuine discrepancies**. No prototype changes were made during the audit phase.
-
-Pages audited:
-- Homepage
-- Our firm
-- Team
-- Portfolio
-- Responsible investing
-- Contact
-- Insights / News
-
----
-
-## Part 3 — Audit fixes applied (10 atomic commits)
-
-| # | Fix | Commit |
-|---|---|---|
-| 1 | Remove \"Thirteen investors and operators...\" line from Our Firm | `a2bbd3e` |
-| 2 | Reorder Partners group on Team page — Mandar before Calum | `b0b5e7f` |
-| 3 | Revert Portfolio \"How we invest\" copy to original (valuation, not enterprise value) | `95b5139` |
-| 4 | Soften \"Where our portfolio meets\" copy on Responsible Investing — Compass & Sureserve are in early conversations about whether care leavers might benefit from the apprenticeship programme | `e4f26d4` |
-| 5 | Restore paragraph break in Responsible Investing intro | `4dc45d4` |
-| 6 | Add bottom \"Interested in partnering with us? — Contact us\" CTA on Responsible Investing | `35560be` |
-| 7 | Contact page: add styled contact form (Name / Surname / Email / Message / Submit, mailto:corporate@cap10partners.com); set IR card email to ir@cap10partners.com; add bottom CTA | `77542ae` |
-| 8 | Insights: add \"For media enquiries, please email corporate@cap10partners.com\" line and bottom CTA | `92955a1` |
-| 9 | Add \"Investors login\" link to top nav (opens icx.efrontcloud.com investor portal in new tab) | `751d1e1` |
-| 10 | Footer: revert \"Terms\" → \"Terms & Conditions\"; add \"Investors login\" link in footer (visible from every page) | `16e1ba1` |
-
-Note: commit `16e1ba1` reused the previous commit's message label ("Add Investors login link to top nav") because the GitHub upload form retained it. The actual content of `16e1ba1` is the footer fix as listed in row 10. The repo end state is correct; only the message label is mislabelled.
-
----
-
-## Part 4 — Three video variants rebuilt from the new baseline
-
-After the audit fixes were complete, the three video variant files were rebuilt from the latest `16e1ba1` baseline so each carries all today's audit fixes plus a different hero clip. Hero clips remain autoplaying, muted, looping `<video>` elements; only the `<source src>` URL differs per file.
-
-| File | Hero clip | Final commit |
-|---|---|---|
-| `index-v1.html` | Mixkit wind turbine — https://assets.mixkit.co/videos/34102/34102-720.mp4 | `d1d2d8a` |
-| `index-v2.html` | Mixkit solar panel — https://assets.mixkit.co/videos/23491/23491-720.mp4 | `ce52b2e` |
-| `index-v3.html` | Mixkit coastal aerial — https://assets.mixkit.co/videos/1955/1955-720.mp4 | `69896b2` |
-
-Two re-uploads were needed — one for v2 and one for v3 — because the first uploads landed as 9-byte `undefined` placeholder files (caused by the JS variable being wiped between download trigger and click). The final live files are full size (~516 KB) and verified.
-
----
-
-## Final state — verified live
-
-| File | Size | Hero | All 10 audit fixes |
+| # | Commit | Page | Change |
 |---|---|---|---|
-| `index.html` | 516,055 bytes | Original CMS clip | ✅ |
-| `index-v1.html` | 516,034 bytes | Mixkit wind turbine | ✅ |
-| `index-v2.html` | 516,034 bytes | Mixkit solar panel | ✅ |
-| `index-v3.html` | 516,032 bytes | Mixkit coastal aerial | ✅ |
+| 1 | a2bbd3e | Our Firm | Removed "Thirteen investors and operators" line. |
+| 2 | b0b5e7f | Team | Reordered Partners group so Mandar appears before Calum. |
+| 3 | 95b5139 | Portfolio | Reverted "How we invest" copy to the original wording. |
+| 4 | e4f26d4 | Responsible Investing | Softened the Compass × Sureserve copy to reflect that conversations are still in progress. |
+| 5 | 4dc45d4 | Responsible Investing | Restored paragraph break in the intro; second paragraph styled in matching Fraunces type. |
+| 6 | 35560be | Responsible Investing | Added "Interested in partnering with us? Contact us" CTA at bottom. |
+| 7 | 77542ae | Contact | Added styled mailto: form, ir@cap10partners.com IR address, bottom CTA. |
+| 8 | 92955a1 | Insights | Added media enquiries line (corporate@cap10partners.com), bottom CTA; verified Sureserve × Duality date 11 April 2024. |
+| 9 | 751d1e1 | Top nav | Added Investors login link to nav (target=_blank, eFront URL). |
+| 10 | 16e1ba1 | Footer | Terms → "Terms & Conditions"; added Investors login on every page footer. |
 
-Each variant was checked with twelve presence assertions covering all ten audit fixes (no \"Thirteen investors\" line, Mandar before Calum, original Portfolio copy, softened RI block, paragraph break, three CTAs, contact form, ir@ email, media enquiries line, nav investors login, Terms & Conditions, footer investors login).
+## 4. Video variants — initial build
+Three variants were created from the 16e1ba1 baseline, each with a single Mixkit hero clip swapped for the original CMS hero video.
 
----
+- **v1** (commit d1d2d8a) — wind turbine landscape (Mixkit 34102)
+- **v2** (commit ce52b2e) — solar panel installers (Mixkit 23491)
+- **v3** (commit 69896b2) — coastal aerial (Mixkit 1955)
 
-## Decisions captured during this session
+Variant v3 required several attempts to debug a 9-byte upload bug (window state wiped on navigation). Final fix: trigger the Blob download inline within the fetch().then() callback so JS state is alive at the moment of file creation.
 
-These were made during the audit and applied via the fix list:
+## 5. Sculpture image fix on Our Firm — commit 9e03a78
+The Our Firm hero strap previously cropped the image with object-fit: cover and object-position: center 30%, hiding the sculpture and showing only the artist's face. Updated to object-fit: contain with the dark #1a1a1a parent acting as a gallery-style frame. Both the sculptor and her artwork are now fully visible in context.
 
-- Five-sector cards (Ni / Es / Hp / In / Mb) are an **intentional redesign elevation** of the original prose. Stays.
-- Tigran Petrosyan as **Managing Director**, Joe Baxter as **Director**, and the **Neeshal Rao** and **Gilly Adcock** additions are **correct**.
-- Mandar Kulkarni's role string stays as **\"Partner, CFO & COO\"** with ampersand.
-- Partners group order is **Fabrice → Luca → Mandar → Calum** (Mandar before Calum because he was a Partner first).
-- Portfolio \"How we invest\" wording stays as the **original valuation phrasing**, not the prototype's \"enterprise value\" rewrite.
-- The \"Where our portfolio meets\" Compass × Sureserve block is **exploratory framing**, not a finished programme — they are in early conversations about whether care leavers might benefit from Sureserve's apprenticeship programme.
-- The Responsible Investing intro is **two paragraphs**, not one, matching the original.
-- Each major section page (Responsible investing, Contact, Insights) carries its own bottom **\"Interested in partnering with us? — Contact us\"** CTA in addition to the global Contact CTA.
-- Contact page keeps the **\"I'm an institutional investor\"** card, the **\"Investors login\"** tile, and now also a **styled contact form** that submits via `mailto:corporate@cap10partners.com`.
-- IR email is **`ir@cap10partners.com`**.
-- Media enquiries email is **`corporate@cap10partners.com`** (no separate press address).
-- \"Read more →\" affordance on Insights cards was **not added** — current card design preferred.
-- \"Investors login\" appears in **both top nav and footer** so it's reachable from every page.
-- Footer reads **\"Disclaimer · Cookie policy · Terms & Conditions · Investors login\"** on every page.
+## 6. v1 rebuilt with three-video alternating layout — commits a10344b → 2a2690a
+The user requested that v1 carry **three videos inline with the wording**, mirroring the Three Promises section on the main prototype, with each video meaning-matched to its block.
 
----
+**Pairings (locked):**
+- 01 Our focus → solar panel installers (Mixkit 23491) — essential infrastructure
+- 02 How we work → wind turbine landscape (Mixkit 34102) — engineered, deliberate process
+- 03 Why ESG matters → coastal aerial (Mixkit 1955) — stewardship, long-term
 
-## Outstanding / next session
+**a10344b** introduced a new "promises-rail" structure with three alternating side-by-side rows (text/video, video/text, text/video) using CSS grid. All three videos autoplay, muted, loop, playsinline. Mobile collapses to single column with the video stacked above each block. Same wording as the main prototype, no copy changes.
 
-- No outstanding fixes from the audit.
-- Three video variants are live for side-by-side comparison; final selection of the preferred hero clip can be made in a future session.
-- If a server-side handler is later wanted for the Contact form (Formspree, Netlify Forms, etc.), that can be wired up to replace the current `mailto:` action.
-- Commit `16e1ba1` has a mismatched message label ("Add Investors login link to top nav" instead of describing the footer change). Cosmetic only; can be amended via `git commit --amend` locally if desired.
+**2a2690a** moved the Three Promises rail to sit directly after the hero section so the videos and wording appear immediately when scrolling past the wind turbine hero. Previously buried below the founder block at y≈2200, now at y≈1442.
+
+## 7. State of the four files
+- **index.html** — main prototype with all 10 audit fixes and the sculpture object-fit fix.
+- **index-v1.html** — wind hero + three-video alternating Three Promises rail (solar/wind/coastal); rail positioned directly under hero.
+- **index-v2.html** — solar hero only (single Mixkit clip); Three Promises section unchanged from main. To be revisited next week with three solar/grid clips.
+- **index-v3.html** — coastal hero only (single Mixkit clip); Three Promises section unchanged from main. To be revisited next week with three nature/landscape clips.
+
+## 8. Outstanding items for next week
+- Find three new Mixkit clips per theme for v2 (solar / energy infrastructure) and v3 (stewardship / scale / nature). User to preview each candidate URL in browser since the agent cannot browse Mixkit's catalogue.
+- Apply the same three-video alternating Three Promises layout to v2 and v3 once clips are confirmed.
+- Optional: review v1 pairings on second viewing to see if any of the three matches need swapping.
+
+## 9. Working patterns established
+- Atomic commits: one fix per commit, verified live with cache-bust before moving on.
+- Integrity gate before every download: brace balance (must match), 5/5 script tags, every script block parses via new Function(code).
+- Downloads must be triggered from github.com origin (not raw.githubusercontent.com) and inline within the fetch callback.
+- Commits verified via the GitHub API plus a SHA-pinned raw fetch before declaring done.
